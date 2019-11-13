@@ -1,0 +1,46 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+1LS-231_Centeno_1349_Proy2
+</name>
+</assembly>
+<members>
+<member name="T:_1LS_231_Centeno_1349_Proy2.My.Resources.Resources">
+<summary>
+  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+</summary>
+</member>
+<member name="P:_1LS_231_Centeno_1349_Proy2.My.Resources.Resources.ResourceManager">
+<summary>
+  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+</summary>
+</member>
+<member name="P:_1LS_231_Centeno_1349_Proy2.My.Resources.Resources.Culture">
+<summary>
+  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+</summary>
+</member>
+<member name="P:_1LS_231_Centeno_1349_Proy2.My.Resources.Resources.buque">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_1LS_231_Centeno_1349_Proy2.My.Resources.Resources.lancha">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_1LS_231_Centeno_1349_Proy2.My.Resources.Resources.sobreviviente">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_1LS_231_Centeno_1349_Proy2.My.Resources.Resources.tiburon">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+</members>
+</doc>
