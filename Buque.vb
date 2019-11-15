@@ -11,7 +11,7 @@
             buque.Location = New Point(-300, buque.Location.Y)
         End If
 
-        buque.Location = New Point(buque.Location.X + 10, buque.Location.Y)
+        buque.Location = New Point(buque.Location.X + 1, buque.Location.Y)
     End Function
 
 End Class

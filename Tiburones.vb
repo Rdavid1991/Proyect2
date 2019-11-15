@@ -10,10 +10,13 @@
     Dim Y_Tiburon
     Dim x_Tiburon
 
+    Dim t_alto As Integer = 30
+    Dim t_ancho As Integer = 30
+
     Public Sub New()
         For i = 0 To 9
             pb_tiburon = New PictureBox()
-            pb_tiburon.Size = New Size(30, 30)
+            pb_tiburon.Size = New Size(t_ancho, t_alto)
             pb_tiburon.Image = My.Resources.tiburon ' Imagen de Resources para los asteroides
             pb_tiburon.BackColor = Color.Transparent
             pb_tiburon.SizeMode = PictureBoxSizeMode.StretchImage
@@ -21,10 +24,9 @@
             pb_tiburon.Visible = False
             v_tiburon(i) = pb_tiburon
             Form1.Controls.Add(pb_tiburon)
-            v_x(i) = 10
-            v_y(i) = 10
+            v_x(i) = 1
+            v_y(i) = 1
         Next
-
         Form1.TimerTiburon.Start()
 
     End Sub
@@ -35,12 +37,12 @@
 
             v_tiburon(i).Visible = True
 
-            If v_tiburon(i).Location.X < -30 Or v_tiburon(i).Location.X > Form1.Width + 30 Then
+            If v_tiburon(i).Location.X < (t_ancho * -1) Or v_tiburon(i).Location.X + t_ancho > Form1.Width + t_ancho Then
                 v_x(i) *= -1
                 'Reversa()
             End If
 
-            If v_tiburon(i).Location.Y < -30 Or v_tiburon(i).Location.Y > Form1.Height + 30 Then
+            If v_tiburon(i).Location.Y < (t_alto * -1) Or v_tiburon(i).Location.Y + t_alto > Form1.Height + t_alto Then
                 v_y(i) *= -1
                 'Reversa()
             End If
@@ -52,10 +54,10 @@
 
     Private Function choqueBordes(i)
         If v_tiburon(i).Bounds.IntersectsWith(Form1.Buque.Bounds) Then
-            If v_tiburon(i).Location.X <= Form1.Buque.Location.X Or v_tiburon(i).Location.X + v_tiburon(i).Width >= Form1.Buque.Location.X Then
+            If v_tiburon(i).Location.X < Form1.Buque.Location.X + Form1.Buque.Width Or v_tiburon(i).Location.X + 30 > Form1.Buque.Location.X Then
                 v_x(i) *= -1
             End If
-            If v_tiburon(i).Location.Y <= Form1.Buque.Location.Y Or v_tiburon(i).Location.Y + v_tiburon(i).Height >= Form1.Buque.Location.Y Then
+            If v_tiburon(i).Location.Y < Form1.Buque.Location.Y + Form1.Buque.Height Or v_tiburon(i).Location.Y + 30 > Form1.Buque.Location.Y Then
                 v_y(i) *= -1
             End If
         End If

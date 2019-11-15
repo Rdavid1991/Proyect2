@@ -139,15 +139,12 @@ Partial Class Form1
         '
         'TimerTiburon
         '
-        Me.TimerTiburon.Interval = 1000
         '
         'TimerSobrevivientes
         '
-        Me.TimerSobrevivientes.Interval = 1000
         '
         'TimerBuque
         '
-        Me.TimerBuque.Interval = 1000
         '
         'Panel1
         '

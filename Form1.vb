@@ -126,15 +126,15 @@
 
     Private Sub TimerSobrevivientes_Tick(sender As Object, e As EventArgs) Handles TimerSobrevivientes.Tick
 
-        If tiempoSobreviviente <= 9 Then
-            If segundos = 10 Then
+        sv.mover(tiempoSobreviviente)
+
+        If tiempoSobreviviente < 9 Then
+            If segundos = 90 Then
                 tiempoSobreviviente += 1
                 segundos = 0
             End If
             segundos += 1
         End If
-
-        sv.mover(tiempoSobreviviente)
 
         sv.choqueBordes(tb.v_tiburon)
     End Sub
