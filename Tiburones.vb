@@ -13,7 +13,7 @@
     Dim t_alto As Integer = 30
     Dim t_ancho As Integer = 30
 
-    Public Sub New()
+    Public Sub New(velocidad)
         For i = 0 To 9
             pb_tiburon = New PictureBox()
             pb_tiburon.Size = New Size(t_ancho, t_alto)
@@ -21,11 +21,12 @@
             pb_tiburon.BackColor = Color.Transparent
             pb_tiburon.SizeMode = PictureBoxSizeMode.StretchImage
             pb_tiburon = salida(i, pb_tiburon)
+            pb_tiburon.Name = "tiburones"
             pb_tiburon.Visible = False
             v_tiburon(i) = pb_tiburon
             Form1.Controls.Add(pb_tiburon)
-            v_x(i) = 1
-            v_y(i) = 1
+            v_x(i) = velocidad
+            v_y(i) = velocidad
         Next
         Form1.TimerTiburon.Start()
 
@@ -33,7 +34,7 @@
 
     Public Function mover()
 
-        For i = 0 To Form1.lblNivel.Text - 1
+        For i = 0 To Form1.nivel - 1
 
             v_tiburon(i).Visible = True
 
@@ -48,19 +49,37 @@
             End If
 
             v_tiburon(i).Location = New Point(v_tiburon(i).Location.X + v_x(i), v_tiburon(i).Location.Y + v_y(i))
-            choqueBordes(i)
+            choqueBuque(i)
+            choquetiburon(i)
         Next
     End Function
 
-    Private Function choqueBordes(i)
+    Public Function choquetiburon(i)
+        For j = 0 To 9
+            If v_tiburon(i).Bounds.IntersectsWith(v_tiburon(j).Bounds) And v_tiburon(j).Visible = True Then
+                If v_tiburon(i).Location.X < v_tiburon(j).Location.X + t_ancho Or v_tiburon(i).Location.X + t_ancho > v_tiburon(j).Location.X Then
+                    v_x(i) *= -1
+                    v_x(j) *= -1
+                End If
+                If v_tiburon(i).Location.Y < v_tiburon(j).Location.Y + t_alto Or v_tiburon(i).Location.Y + t_alto > v_tiburon(j).Location.Y Then
+                    v_y(i) *= -1
+                    v_y(j) *= -1
+                End If
+            End If
+        Next
+    End Function
+
+    Public Function choqueBuque(i)
+
         If v_tiburon(i).Bounds.IntersectsWith(Form1.Buque.Bounds) Then
-            If v_tiburon(i).Location.X < Form1.Buque.Location.X + Form1.Buque.Width Or v_tiburon(i).Location.X + 30 > Form1.Buque.Location.X Then
+            If v_tiburon(i).Location.X < Form1.Buque.Location.X + Form1.Buque.Width Or v_tiburon(i).Location.X + t_ancho > Form1.Buque.Location.X Then
                 v_x(i) *= -1
             End If
-            If v_tiburon(i).Location.Y < Form1.Buque.Location.Y + Form1.Buque.Height Or v_tiburon(i).Location.Y + 30 > Form1.Buque.Location.Y Then
+            If v_tiburon(i).Location.Y + t_alto > Form1.Buque.Location.Y Then
                 v_y(i) *= -1
             End If
         End If
+
     End Function
 
     Private Function salida(i, pb_tiburon)
@@ -90,6 +109,5 @@
 
         Return pb_tiburon
     End Function
-
 
 End Class

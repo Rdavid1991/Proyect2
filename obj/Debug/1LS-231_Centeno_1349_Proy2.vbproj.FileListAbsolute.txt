@@ -20,3 +20,14 @@ C:\Users\SMARTMATIC\Desktop\visual\Proyect2\obj\Debug\1LS-231_Centeno_1349_Proy2
 C:\Users\SMARTMATIC\Desktop\visual\Proyect2\obj\Debug\1LS-231_Centeno_1349_Proy2.exe
 C:\Users\SMARTMATIC\Desktop\visual\Proyect2\obj\Debug\1LS-231_Centeno_1349_Proy2.xml
 C:\Users\SMARTMATIC\Desktop\visual\Proyect2\obj\Debug\1LS-231_Centeno_1349_Proy2.pdb
+C:\Users\E5440\Google Drive\Portafolios\Desarrollo 8\Proyectos\1LS-231_Centeno_1349_Proy2\bin\Debug\1LS-231_Centeno_1349_Proy2.exe.config
+C:\Users\E5440\Google Drive\Portafolios\Desarrollo 8\Proyectos\1LS-231_Centeno_1349_Proy2\bin\Debug\1LS-231_Centeno_1349_Proy2.exe
+C:\Users\E5440\Google Drive\Portafolios\Desarrollo 8\Proyectos\1LS-231_Centeno_1349_Proy2\bin\Debug\1LS-231_Centeno_1349_Proy2.pdb
+C:\Users\E5440\Google Drive\Portafolios\Desarrollo 8\Proyectos\1LS-231_Centeno_1349_Proy2\bin\Debug\1LS-231_Centeno_1349_Proy2.xml
+C:\Users\E5440\Google Drive\Portafolios\Desarrollo 8\Proyectos\1LS-231_Centeno_1349_Proy2\obj\Debug\1LS-231_Centeno_1349_Proy2.vbprojAssemblyReference.cache
+C:\Users\E5440\Google Drive\Portafolios\Desarrollo 8\Proyectos\1LS-231_Centeno_1349_Proy2\obj\Debug\_1LS_231_Centeno_1349_Proy2.Form1.resources
+C:\Users\E5440\Google Drive\Portafolios\Desarrollo 8\Proyectos\1LS-231_Centeno_1349_Proy2\obj\Debug\_1LS_231_Centeno_1349_Proy2.Resources.resources
+C:\Users\E5440\Google Drive\Portafolios\Desarrollo 8\Proyectos\1LS-231_Centeno_1349_Proy2\obj\Debug\1LS-231_Centeno_1349_Proy2.vbproj.GenerateResource.cache
+C:\Users\E5440\Google Drive\Portafolios\Desarrollo 8\Proyectos\1LS-231_Centeno_1349_Proy2\obj\Debug\1LS-231_Centeno_1349_Proy2.exe
+C:\Users\E5440\Google Drive\Portafolios\Desarrollo 8\Proyectos\1LS-231_Centeno_1349_Proy2\obj\Debug\1LS-231_Centeno_1349_Proy2.xml
+C:\Users\E5440\Google Drive\Portafolios\Desarrollo 8\Proyectos\1LS-231_Centeno_1349_Proy2\obj\Debug\1LS-231_Centeno_1349_Proy2.pdb
