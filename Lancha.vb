@@ -4,7 +4,6 @@
 
     Public Sub New()
         lancha.Visible = True
-        lancha.BackColor = Color.Red
     End Sub
 
     Function Reversa()
@@ -12,7 +11,7 @@
             lancha.Image = My.Resources.lancha
         End If
         If lancha.Location.X + lancha.Width >= Form1.Width Then
-            lancha.Image = My.Resources.lancha
+            lancha.Image = My.Resources.tiburon
         End If
         If lancha.Location.Y <= 0 Then
             lancha.Image = My.Resources.lancha

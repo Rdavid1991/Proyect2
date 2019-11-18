@@ -14,6 +14,7 @@
     Dim bq
 
     Public nivel As Integer
+    Public puntos As Integer
     Dim tiempoSobreviviente As Integer = 0
     Dim segundos As Integer = 1
     Dim ms_gasolina As Integer = 0
@@ -26,6 +27,7 @@
         End If
 
         lbl_mensaje.Visible = False
+        lbl_puntos_obtenidos.Visible = False
 
         velocidad = 1
 
@@ -122,7 +124,7 @@
     Private Sub TimerBuque_Tick(sender As Object, e As EventArgs) Handles TimerBuque.Tick
         bq.mover()
 
-        If lbl_puntos.Text > 90 Then
+        If lbl_puntos.Text > 90 - (lbl_sob_com.Text * 10) Then
             Controls.Clear()
 
             lancha.Visible = False
@@ -146,11 +148,17 @@
                 lblNivel.Text = lblNivel.Text + nivel
             End If
 
+            puntos += lbl_sob_com.Text
+
             lbl_mensaje.Text = "Ganaste, listo para el nivel " + Str(lblNivel.Text) + " ?"
             lbl_mensaje.Visible = True
+
+            lbl_puntos_obtenidos.Text = "Puntos total" + Str(puntos)
+            lbl_puntos_obtenidos.Visible = True
+
         End If
 
-        If lbl_vidas.Text = 0 Then
+        If lbl_vidas.Text = 0 Or lbl_gasolina.Text = 0 Then
 
             Controls.Clear()
 
@@ -174,6 +182,9 @@
 
             lbl_mensaje.Text = "Perdiste intentalo de nuevo "
             lbl_mensaje.Visible = True
+
+            lbl_puntos_obtenidos.Text = "Puntos total" + Str(puntos)
+            lbl_puntos_obtenidos.Visible = True
         End If
 
     End Sub

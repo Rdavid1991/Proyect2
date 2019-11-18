@@ -91,6 +91,7 @@
                 If v_sobreviviente(i).Bounds.IntersectsWith(tiburon(j).Bounds) And v_sobreviviente(i).Visible = True Then
                     v_sobreviviente(i).Visible = False
                     v_sobreviviente(i).Tag = 1
+                    Form1.lbl_sob_com.Text += 1
                 End If
             Next
         Next
