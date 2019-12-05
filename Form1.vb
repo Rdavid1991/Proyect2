@@ -42,6 +42,7 @@
         Buque.Visible = True
 
         TimerLancha.Start()
+        Timer_mostrarSobrevivientes.Start()
     End Sub
 
     Protected Overrides Function ProcessCmdKey(ByRef msg As Message, keyData As Keys) As Boolean
@@ -68,16 +69,16 @@
             Select Case keyData
                 Case Keys.Up
                     Y_Lancha -= 1
-                    lancha.Image = My.Resources.lancha
+                    lancha.Image = My.Resources.lanchaArriba
                 Case Keys.Down
                     Y_Lancha += 1
-                    lancha.Image = My.Resources.lancha
+                    lancha.Image = My.Resources.lanchaAbajo
                 Case Keys.Left
                     X_Lancha -= 1
-                    lancha.Image = My.Resources.lancha
+                    lancha.Image = My.Resources.lanchaIzquierda
                 Case Keys.Right
                     X_Lancha += 1
-                    lancha.Image = My.Resources.lancha
+                    lancha.Image = My.Resources.lanchaDerecha
             End Select
 
         End If
@@ -107,24 +108,14 @@
     End Sub
 
     Private Sub TimerSobrevivientes_Tick(sender As Object, e As EventArgs) Handles TimerSobrevivientes.Tick
-
         sv.mover(tiempoSobreviviente)
-
-        If tiempoSobreviviente < 9 Then
-            If segundos = 90 Then
-                tiempoSobreviviente += 1
-                segundos = 0
-            End If
-            segundos += 1
-        End If
-
         sv.choqueTiburon(tb.v_tiburon)
     End Sub
 
     Private Sub TimerBuque_Tick(sender As Object, e As EventArgs) Handles TimerBuque.Tick
         bq.mover()
 
-        If lbl_puntos.Text > 90 - (lbl_sob_com.Text * 10) Then
+        If lbl_puntos.Text > 90 Then
             Controls.Clear()
 
             lancha.Visible = False
@@ -142,13 +133,13 @@
             TimerTiburon.Stop()
             TimerBuque.Stop()
 
+            puntos += lbl_puntos.Text
+
             InitializeComponent()
 
             If lblNivel.Text < 10 Then
                 lblNivel.Text = lblNivel.Text + nivel
             End If
-
-            puntos += lbl_sob_com.Text
 
             lbl_mensaje.Text = "Ganaste, listo para el nivel " + Str(lblNivel.Text) + " ?"
             lbl_mensaje.Visible = True
@@ -178,6 +169,8 @@
             TimerTiburon.Stop()
             TimerBuque.Stop()
 
+            puntos += lbl_puntos.Text
+
             InitializeComponent()
 
             lbl_mensaje.Text = "Perdiste intentalo de nuevo "
@@ -189,5 +182,12 @@
 
     End Sub
 
+    Private Sub Timer_mostrarSobrevivientes_Tick(sender As Object, e As EventArgs) Handles Timer_mostrarSobrevivientes.Tick
+
+        sv.v_sobreviviente(rnd.Next(9)).Visible = True
+
+        sv.v_sobreviviente(rnd.Next(9)).Visible = False
+
+    End Sub
 End Class
 

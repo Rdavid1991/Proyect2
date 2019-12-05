@@ -27,12 +27,27 @@
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:_1LS_231_Centeno_1349_Proy2.My.Resources.Resources.lancha">
+<member name="P:_1LS_231_Centeno_1349_Proy2.My.Resources.Resources.explocion">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:_1LS_231_Centeno_1349_Proy2.My.Resources.Resources.mar">
+<member name="P:_1LS_231_Centeno_1349_Proy2.My.Resources.Resources.lanchaAbajo">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_1LS_231_Centeno_1349_Proy2.My.Resources.Resources.lanchaArriba">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_1LS_231_Centeno_1349_Proy2.My.Resources.Resources.lanchaDerecha">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:_1LS_231_Centeno_1349_Proy2.My.Resources.Resources.lanchaIzquierda">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>

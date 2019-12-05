@@ -34,11 +34,9 @@
 
     Public Function mover(tiempo)
 
-        For i = 0 To tiempo
+        For i = 0 To 9
 
-            If v_sobreviviente(i).Tag <> 1 Then
-                v_sobreviviente(i).Visible = True
-
+            If v_sobreviviente(i).Visible = True Then
                 If v_sobreviviente(i).Location.X < 0 Or v_sobreviviente(i).Location.X + s_ancho > Form1.Width Then
                     v_x(i) *= -1
                 End If
@@ -50,9 +48,7 @@
 
                 choqueSobreviviente(i)
                 choqueBuque(i)
-
             End If
-
         Next
 
     End Function
@@ -91,7 +87,6 @@
                 If v_sobreviviente(i).Bounds.IntersectsWith(tiburon(j).Bounds) And v_sobreviviente(i).Visible = True Then
                     v_sobreviviente(i).Visible = False
                     v_sobreviviente(i).Tag = 1
-                    Form1.lbl_sob_com.Text += 1
                 End If
             Next
         Next

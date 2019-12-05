@@ -35,16 +35,15 @@ Partial Class Form1
         Me.TimerSobrevivientes = New System.Windows.Forms.Timer(Me.components)
         Me.TimerBuque = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.lbl_puntos = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lbl_nSobrevivientes = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lbl_mensaje = New System.Windows.Forms.Label()
+        Me.lbl_puntos_obtenidos = New System.Windows.Forms.Label()
         Me.lancha = New System.Windows.Forms.PictureBox()
         Me.Buque = New System.Windows.Forms.PictureBox()
-        Me.lbl_sob_com = New System.Windows.Forms.Label()
-        Me.lbl_puntos_obtenidos = New System.Windows.Forms.Label()
+        Me.Timer_mostrarSobrevivientes = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.lancha, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Buque, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -106,22 +105,22 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label3.Location = New System.Drawing.Point(604, 26)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(67, 24)
+        Me.Label3.Size = New System.Drawing.Size(62, 20)
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "Nivel : "
         '
         'lblNivel
         '
         Me.lblNivel.AutoSize = True
-        Me.lblNivel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNivel.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblNivel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNivel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lblNivel.Location = New System.Drawing.Point(674, 26)
         Me.lblNivel.Name = "lblNivel"
-        Me.lblNivel.Size = New System.Drawing.Size(20, 24)
+        Me.lblNivel.Size = New System.Drawing.Size(19, 20)
         Me.lblNivel.TabIndex = 8
         Me.lblNivel.Text = "1"
         '
@@ -137,8 +136,6 @@ Partial Class Form1
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.Panel1.Controls.Add(Me.lbl_sob_com)
-        Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.lbl_puntos)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.lbl_nSobrevivientes)
@@ -153,16 +150,6 @@ Partial Class Form1
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(881, 50)
         Me.Panel1.TabIndex = 9
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(117, 4)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(202, 20)
-        Me.Label6.TabIndex = 13
-        Me.Label6.Text = "Sobrevivientes comidos:"
         '
         'lbl_puntos
         '
@@ -216,17 +203,27 @@ Partial Class Form1
         Me.lbl_mensaje.Text = "mensaje1"
         Me.lbl_mensaje.Visible = False
         '
+        'lbl_puntos_obtenidos
+        '
+        Me.lbl_puntos_obtenidos.AutoSize = True
+        Me.lbl_puntos_obtenidos.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_puntos_obtenidos.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_puntos_obtenidos.Location = New System.Drawing.Point(293, 318)
+        Me.lbl_puntos_obtenidos.Name = "lbl_puntos_obtenidos"
+        Me.lbl_puntos_obtenidos.Size = New System.Drawing.Size(126, 29)
+        Me.lbl_puntos_obtenidos.TabIndex = 11
+        Me.lbl_puntos_obtenidos.Text = "mensaje2"
+        Me.lbl_puntos_obtenidos.Visible = False
+        '
         'lancha
         '
-        Me.lancha.BackColor = System.Drawing.Color.Transparent
-        Me.lancha.Image = Global._1LS_231_Centeno_1349_Proy2.My.Resources.Resources.lancha
-        Me.lancha.Location = New System.Drawing.Point(365, 229)
+        Me.lancha.Image = Global._1LS_231_Centeno_1349_Proy2.My.Resources.Resources.lanchaArriba
+        Me.lancha.Location = New System.Drawing.Point(405, 229)
         Me.lancha.Name = "lancha"
         Me.lancha.Size = New System.Drawing.Size(40, 40)
         Me.lancha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.lancha.TabIndex = 2
+        Me.lancha.TabIndex = 12
         Me.lancha.TabStop = False
-        Me.lancha.Visible = False
         '
         'Buque
         '
@@ -241,27 +238,9 @@ Partial Class Form1
         Me.Buque.TabStop = False
         Me.Buque.Visible = False
         '
-        'lbl_sob_com
+        'Timer_mostrarSobrevivientes
         '
-        Me.lbl_sob_com.AutoSize = True
-        Me.lbl_sob_com.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_sob_com.Location = New System.Drawing.Point(325, 4)
-        Me.lbl_sob_com.Name = "lbl_sob_com"
-        Me.lbl_sob_com.Size = New System.Drawing.Size(19, 20)
-        Me.lbl_sob_com.TabIndex = 14
-        Me.lbl_sob_com.Text = "0"
-        '
-        'lbl_puntos_obtenidos
-        '
-        Me.lbl_puntos_obtenidos.AutoSize = True
-        Me.lbl_puntos_obtenidos.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_puntos_obtenidos.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_puntos_obtenidos.Location = New System.Drawing.Point(293, 318)
-        Me.lbl_puntos_obtenidos.Name = "lbl_puntos_obtenidos"
-        Me.lbl_puntos_obtenidos.Size = New System.Drawing.Size(126, 29)
-        Me.lbl_puntos_obtenidos.TabIndex = 11
-        Me.lbl_puntos_obtenidos.Text = "mensaje2"
-        Me.lbl_puntos_obtenidos.Visible = False
+        Me.Timer_mostrarSobrevivientes.Interval = 10000
         '
         'Form1
         '
@@ -270,10 +249,10 @@ Partial Class Form1
         Me.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(884, 661)
+        Me.Controls.Add(Me.lancha)
         Me.Controls.Add(Me.lbl_puntos_obtenidos)
         Me.Controls.Add(Me.lbl_mensaje)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.lancha)
         Me.Controls.Add(Me.Buque)
         Me.Controls.Add(Me.btnIniciar)
         Me.Name = "Form1"
@@ -290,7 +269,6 @@ Partial Class Form1
 
     Friend WithEvents btnIniciar As Button
     Friend WithEvents Buque As PictureBox
-    Friend WithEvents lancha As PictureBox
     Friend WithEvents TimerLancha As Timer
     Friend WithEvents Label1 As Label
     Friend WithEvents lbl_vidas As Label
@@ -307,7 +285,7 @@ Partial Class Form1
     Friend WithEvents Label5 As Label
     Friend WithEvents lbl_puntos As Label
     Friend WithEvents lbl_mensaje As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents lbl_sob_com As Label
     Friend WithEvents lbl_puntos_obtenidos As Label
+    Friend WithEvents lancha As PictureBox
+    Friend WithEvents Timer_mostrarSobrevivientes As Timer
 End Class

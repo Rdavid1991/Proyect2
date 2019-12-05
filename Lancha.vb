@@ -8,16 +8,16 @@
 
     Function Reversa()
         If lancha.Location.X <= 0 Then
-            lancha.Image = My.Resources.lancha
+            lancha.Image = My.Resources.lanchaDerecha
         End If
         If lancha.Location.X + lancha.Width >= Form1.Width Then
-            lancha.Image = My.Resources.tiburon
+            lancha.Image = My.Resources.lanchaIzquierda
         End If
         If lancha.Location.Y <= 0 Then
-            lancha.Image = My.Resources.lancha
+            lancha.Image = My.Resources.lanchaAbajo
         End If
         If lancha.Location.Y + lancha.Height >= Form1.Height - 40 Then
-            lancha.Image = My.Resources.lancha
+            lancha.Image = My.Resources.lanchaArriba
         End If
     End Function
 
@@ -74,8 +74,7 @@
 
                 Form1.lbl_vidas.Text -= 1
                 lancha.Location = New Point(473, 302)
-                lancha.Image = My.Resources.lancha
-
+                lancha.Image = My.Resources.lanchaArriba
                 Form1.X_Lancha = 0
                 Form1.Y_Lancha = 0
 

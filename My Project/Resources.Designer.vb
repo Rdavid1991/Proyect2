@@ -73,9 +73,9 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property lancha() As System.Drawing.Bitmap
+        Friend ReadOnly Property explocion() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("lancha", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("explocion", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -83,9 +83,39 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property mar() As System.Drawing.Bitmap
+        Friend ReadOnly Property lanchaAbajo() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("mar", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("lanchaAbajo", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property lanchaArriba() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("lanchaArriba", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property lanchaDerecha() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("lanchaDerecha", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property lanchaIzquierda() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("lanchaIzquierda", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
